@@ -1,7 +1,12 @@
 // @packages
 import { ChangeEvent, useState } from "react";
 
-export const useForm = (initialForm = {}) => {
+// @interfaces
+interface IInitialForm {
+  searchText: string;
+}
+
+export const useForm = (initialForm: IInitialForm) => {
   const [formState, setFormState] = useState(initialForm);
 
   const onInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
